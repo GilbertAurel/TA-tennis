@@ -35,15 +35,12 @@ export default function ActivityDetailPage({
 
   const handleCancel = () => {
     if (!booking?.id) return;
-    updateBooking.mutate(
-      {
-        id: booking.id,
-        changes: {
-          status: booking.status === "CANCELLED" ? "NEW" : "CANCELLED",
-        },
+    updateBooking.mutate({
+      id: booking.id,
+      changes: {
+        status: booking.status === "CANCELLED" ? "NEW" : "CANCELLED",
       },
-      { onSuccess: () => router.push("/") },
-    );
+    });
   };
 
   const handleDelete = () => {
