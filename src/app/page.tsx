@@ -15,7 +15,7 @@ export default function MyActivityPage() {
   return (
     <PageContainer>
       <HomeHeader />
-      <div className="flex-1">
+      <div className="flex-1 bg-bg-gray pt-[24px]">
         {isLoading ? (
           <LoadingState />
         ) : !bookings || bookings.length === 0 ? (

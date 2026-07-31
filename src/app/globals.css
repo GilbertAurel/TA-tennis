@@ -3,7 +3,8 @@
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --color-page-bg: #f5f7fa;
+  --color-page-bg: #ffffff;
+  --color-bg-gray: #f5f7fa;
   --color-ink: #686868;
   --color-ink-secondary: #6b7280;
   --color-ink-muted: #9ca3af;
