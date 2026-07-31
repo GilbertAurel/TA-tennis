@@ -14,12 +14,12 @@
   --color-alert-yellow-icon: #eecf15;
   --color-cancel: #d96e78;
 
-  --color-status-new-bg: #dff2c8;
-  --color-status-new-text: #5a8f2a;
-  --color-status-inprogress-bg: #dbeafe;
-  --color-status-inprogress-text: #1d4ed8;
-  --color-status-received-bg: #ffe4da;
-  --color-status-received-text: #c0563f;
+  --color-status-new-bg: #7db950;
+  --color-status-new-text: #7db950;
+  --color-status-inprogress-bg: #7db950;
+  --color-status-inprogress-text: #7db950;
+  --color-status-received-bg: #f1a393;
+  --color-status-received-text: #f1a393;
   --color-status-completed-bg: #d1fae5;
   --color-status-completed-text: #047857;
   --color-status-cancelled-bg: #f3f4f6;

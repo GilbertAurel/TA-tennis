@@ -12,7 +12,7 @@ export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
     date: "2026-08-01",
     startTime: "14:00",
     endTime: "15:00",
-    status: "NEW",
+    status: "IN PROGRESS",
   },
   {
     referenceNumber: "279780/12/25/HK",
@@ -37,7 +37,7 @@ export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
     date: "2024-03-30",
     startTime: "10:00",
     endTime: "11:00",
-    status: "NEW",
+    status: "IN PROGRESS",
   },
   {
     referenceNumber: "127385/03/24/ENG",

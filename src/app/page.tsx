@@ -21,13 +21,9 @@ export default function MyActivityPage() {
         ) : !bookings || bookings.length === 0 ? (
           <EmptyState />
         ) : (
-          <div className="flex flex-col gap-4 px-4 pb-6 pt-1">
+          <div className="flex flex-col gap-4 px-[20px] pb-6 pt-1">
             {bookings.map((booking, index) => (
-              <ActivityCard
-                key={booking.id}
-                booking={booking}
-                index={index}
-              />
+              <ActivityCard key={booking.id} booking={booking} index={index} />
             ))}
           </div>
         )}
