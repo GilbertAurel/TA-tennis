@@ -16,7 +16,7 @@ export function BottomNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky bottom-0 z-20 mt-auto border-t border-[#eef0f3] bg-white pb-[env(safe-area-inset-bottom)]">
+    <nav className="sticky bottom-0 z-20 mt-auto border-t border-[#eef0f3] bg-white pb-[env(safe-area-inset-bottom)] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
       <div className="grid grid-cols-4">
         {items.map(({ href, label, icon: Icon }) => {
           const active =
@@ -29,11 +29,11 @@ export function BottomNavigation() {
               href={href}
               className={cn(
                 "flex flex-col items-center gap-1 py-2.5 transition-colors",
-                active ? "text-accent-active" : "text-ink-secondary"
+                active ? "text-accent-active" : "text-ink-secondary",
               )}
             >
               <Icon className="h-[22px] w-[22px]" strokeWidth={2} />
-              <span className="text-[10px] font-medium">{label}</span>
+              <span className="text-[10px] font-bold">{label}</span>
             </Link>
           );
         })}

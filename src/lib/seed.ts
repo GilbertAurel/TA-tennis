@@ -4,7 +4,7 @@ export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
   {
     referenceNumber: "329394/07/26/FB",
     category: "Facility Booking",
-    facilityName: "Tennis Court A",
+    facilityName: "Facility Booking - other",
     eventName: "niko",
     description:
       "Private tennis practice session. Court A reserved for singles play. Please bring your own rackets and non-marking shoes.",

@@ -4,8 +4,8 @@ import { Bell, SlidersHorizontal } from "lucide-react";
 
 export function HomeHeader() {
   return (
-    <header className="sticky top-0 z-20 flex items-center justify-between bg-white px-5 pb-3 pt-4 shadow">
-      <h1 className="text-xl font-bold text-[#525C68]">My Activity</h1>
+    <header className="sticky top-0 z-20 flex items-center justify-between bg-white px-5 pb-[24px] pt-4 drop-shadow">
+      <h1 className="text-xl font-semibold text-[#525C68]">My Activity</h1>
       <div className="flex items-center gap-4">
         <button
           type="button"
