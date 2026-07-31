@@ -9,7 +9,7 @@ export default function AdditionalInfoPage() {
 
   return (
     <PageContainer>
-      <header className="sticky top-0 z-20 flex items-center bg-white px-4 pb-3 pt-5">
+      <header className="sticky top-0 z-20 flex items-center bg-white px-4 pb-3 pt-5 drop-shadow">
         <button
           type="button"
           aria-label="Back"
@@ -22,7 +22,7 @@ export default function AdditionalInfoPage() {
           Additional Info
         </h1>
       </header>
-      <div className="flex-1 bg-page-bg" />
+      <div className="flex-1 bg-bg-gray" />
     </PageContainer>
   );
 }
