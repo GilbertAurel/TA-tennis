@@ -10,7 +10,11 @@ import { CancelRequestButton } from "@/components/cancel-request-button";
 import { LoadingState } from "@/components/loading-state";
 import { EmptyState } from "@/components/empty-state";
 import { StatusBadge } from "@/components/status-badge";
-import { useBooking, useUpdateBooking } from "@/hooks/use-bookings";
+import {
+  useBooking,
+  useDeleteBooking,
+  useUpdateBooking,
+} from "@/hooks/use-bookings";
 import { formatTimeSlot } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +30,7 @@ export default function ActivityDetailPage({
   const router = useRouter();
   const { data: booking, isLoading } = useBooking(bookingId);
   const updateBooking = useUpdateBooking();
+  const deleteBooking = useDeleteBooking();
   const [activeTab, setActiveTab] = useState<(typeof TABS)[number]>("Detail");
 
   const handleCancel = () => {
@@ -39,6 +44,11 @@ export default function ActivityDetailPage({
       },
       { onSuccess: () => router.push("/") },
     );
+  };
+
+  const handleDelete = () => {
+    if (!booking?.id) return;
+    deleteBooking.mutate(booking.id, { onSuccess: () => router.push("/") });
   };
 
   return (
@@ -130,6 +140,7 @@ export default function ActivityDetailPage({
               <CancelRequestButton
                 isCancel={booking.status !== "CANCELLED"}
                 onConfirm={handleCancel}
+                onDelete={handleDelete}
               />
             </div>
           )}
