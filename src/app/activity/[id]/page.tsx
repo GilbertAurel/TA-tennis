@@ -32,7 +32,7 @@ export default function ActivityDetailPage({
     if (!booking?.id) return;
     updateBooking.mutate(
       { id: booking.id, changes: { status: "CANCELLED" } },
-      { onSuccess: () => router.push("/") }
+      { onSuccess: () => router.push("/") },
     );
   };
 
@@ -49,16 +49,17 @@ export default function ActivityDetailPage({
       ) : (
         <>
           {/* Reference block */}
-          <div className="bg-white px-5 pb-2.5">
-            <div className="flex items-center gap-2">
-              <h1 className="text-base font-semibold text-ink">
+          <div className="w-full bg-white px-5 pb-2.5 flex justify-between">
+            <div className="flex-col">
+              <h1 className="text-[12px] text-ink">
                 {booking.referenceNumber}
               </h1>
-              <StatusBadge status={booking.status} />
+              <p className="mt-[4px] text-[16px] font-semibold text-ink-secondary">
+                {booking.category}
+              </p>
             </div>
-            <p className="mt-0.5 text-sm text-ink-secondary">
-              {booking.category}
-            </p>
+
+            <StatusBadge status={booking.status} isNew={booking.isNew} />
           </div>
 
           {/* Tabs */}
@@ -70,7 +71,7 @@ export default function ActivityDetailPage({
                 onClick={() => setActiveTab(tab)}
                 className={cn(
                   "relative mr-6 pb-2 pt-1 text-[15px] font-semibold transition-colors",
-                  activeTab === tab ? "text-ink" : "text-ink-muted"
+                  activeTab === tab ? "text-ink" : "text-ink-muted",
                 )}
               >
                 {tab}
@@ -93,7 +94,7 @@ export default function ActivityDetailPage({
                   value={formatTimeSlot(
                     booking.date,
                     booking.startTime,
-                    booking.endTime
+                    booking.endTime,
                   )}
                 />
                 <InfoRow label="Description" value={booking.description} />

@@ -31,7 +31,9 @@ export function ActivityCard({
           <span className="text-[12px] font-medium text-ink-secondary">
             {booking.referenceNumber}
           </span>
-          <StatusBadge status={booking.status} />
+          <StatusBadge
+            status={booking.status === "NEW" ? "IN PROGRESS" : booking.status}
+          />
         </div>
 
         <h2 className="mt-1.5 text-[14px] font-semibold text-ink">
