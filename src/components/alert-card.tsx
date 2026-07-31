@@ -12,7 +12,7 @@ export function AlertCard({ bookingId }: { bookingId: number }) {
       type="button"
       whileTap={{ scale: 0.98 }}
       onClick={() => router.push(`/activity/${bookingId}/additional-info`)}
-      className="flex w-full items-center gap-3 rounded-xl bg-alert-yellow-bg p-3.5 text-left"
+      className="flex w-full items-center gap-3 rounded-xl bg-white px-[24px] py-[20px] text-left drop-shadow"
     >
       <AlertTriangle
         className="h-7 w-7 shrink-0 text-alert-yellow-icon"
@@ -20,10 +20,9 @@ export function AlertCard({ bookingId }: { bookingId: number }) {
         fill="currentColor"
         stroke="none"
       />
-      <span className="flex-1 text-[15px] font-semibold text-clickhere">
-        Click Here
+      <span className="flex-1 text-[15px] font-semibold text-ink-active">
+        Click Here.
       </span>
-      <ChevronRight className="h-5 w-5 text-clickhere/60" strokeWidth={2} />
     </motion.button>
   );
 }

@@ -47,9 +47,9 @@ export default function ActivityDetailPage({
           message="This activity may have been removed."
         />
       ) : (
-        <>
+        <div className="bg-bg-gray flex-1">
           {/* Reference block */}
-          <div className="w-full bg-white px-5 pb-2.5 flex justify-between">
+          <div className="w-full bg-white px-5 pb-[42px] flex justify-between">
             <div className="flex-col">
               <h1 className="text-[12px] text-ink">
                 {booking.referenceNumber}
@@ -59,24 +59,24 @@ export default function ActivityDetailPage({
               </p>
             </div>
 
-            <StatusBadge status={booking.status} isNew={booking.isNew} />
+            <StatusBadge status={booking.status} />
           </div>
 
           {/* Tabs */}
-          <div className="flex border-b border-[#eef0f3] bg-white px-5">
+          <div className="flex border-b border-[#D9D9D9] bg-white px-5">
             {TABS.map((tab) => (
               <button
                 key={tab}
                 type="button"
                 onClick={() => setActiveTab(tab)}
                 className={cn(
-                  "relative mr-6 pb-2 pt-1 text-[15px] font-semibold transition-colors",
-                  activeTab === tab ? "text-ink" : "text-ink-muted",
+                  "relative px-[18px] pb-2 pt-1 text-[14px] font-bold transition-colors",
+                  activeTab === tab ? "text-ink-active" : "text-ink-muted",
                 )}
               >
                 {tab}
                 {activeTab === tab && (
-                  <span className="absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-accent" />
+                  <span className="absolute inset-x-0 -bottom-px h-0.5 font-bold rounded-full bg-accent" />
                 )}
               </button>
             ))}
@@ -112,7 +112,7 @@ export default function ActivityDetailPage({
               />
             </div>
           )}
-        </>
+        </div>
       )}
     </PageContainer>
   );
