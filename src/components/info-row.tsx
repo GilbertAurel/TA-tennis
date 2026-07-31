@@ -1,8 +1,20 @@
-export function InfoRow({ label, value }: { label: string; value: string }) {
+import { cn } from "@/lib/utils";
+
+export function InfoRow({
+  label,
+  value,
+  underline,
+}: {
+  label: string;
+  value: string;
+  underline?: boolean;
+}) {
   return (
-    <div>
-      <p className="text-xs font-medium text-ink-muted">{label}</p>
-      <p className="mt-1.5 text-[15px] font-medium text-ink">{value}</p>
+    <div
+      className={cn("pb-[10px]", underline ? "border-b border-b-gray-200" : "")}
+    >
+      <p className="text-[12px] font-semibold text-ink">{label}</p>
+      <p className="mt-2 text-[14px] font-medium text-ink">{value}</p>
     </div>
   );
 }

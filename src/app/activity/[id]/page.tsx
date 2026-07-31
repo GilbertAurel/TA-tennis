@@ -63,7 +63,7 @@ export default function ActivityDetailPage({
           </div>
 
           {/* Tabs */}
-          <div className="flex border-b border-[#D9D9D9] bg-white px-5">
+          <div className="flex border-b border-[#D9D9D9] bg-white px-[12px]">
             {TABS.map((tab) => (
               <button
                 key={tab}
@@ -83,12 +83,20 @@ export default function ActivityDetailPage({
           </div>
 
           {activeTab === "Detail" ? (
-            <div className="flex flex-1 flex-col px-5 pt-3">
+            <div className="flex flex-1 flex-col px-[12px] pt-3">
               <AlertCard bookingId={bookingId} />
 
-              <div className="mt-5 flex flex-col gap-5">
-                <InfoRow label="Facility Name" value={booking.facilityName} />
-                <InfoRow label="Event Name" value={booking.eventName} />
+              <div className="mt-5 px-[16px] pt-[20px] pb-[32px] flex flex-col gap-5 bg-white rounded-2xl drop-shadow">
+                <InfoRow
+                  label="Facility Name"
+                  value={booking.facilityName}
+                  underline
+                />
+                <InfoRow
+                  label="Event Name"
+                  value={booking.eventName}
+                  underline
+                />
                 <InfoRow
                   label="Time Slot"
                   value={formatTimeSlot(
@@ -96,6 +104,7 @@ export default function ActivityDetailPage({
                     booking.startTime,
                     booking.endTime,
                   )}
+                  underline
                 />
                 <InfoRow label="Description" value={booking.description} />
               </div>
