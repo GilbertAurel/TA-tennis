@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { ChevronLeft, MessageCircleMore } from "lucide-react";
+import Icon from "./base/Icon";
 
 export function DetailHeader() {
   const router = useRouter();
@@ -14,15 +15,22 @@ export function DetailHeader() {
         onClick={() => router.back()}
         className="flex h-9 w-9 items-center justify-center text-accent transition-opacity active:opacity-60"
       >
-        <ChevronLeft className="h-6 w-6" strokeWidth={2.25} />
+        <Icon
+          icon="line-md:arrow-left"
+          fontSize={22}
+          className="text-ink-active"
+        />
       </button>
       <button
         type="button"
         aria-label="Chat"
         className="relative flex h-9 w-9 items-center justify-center text-ink transition-opacity active:opacity-60"
       >
-        <MessageCircleMore className="h-[22px] w-[22px]" strokeWidth={2} />
-        <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-[#e11d48]" />
+        <Icon
+          icon="icon-park-outline:message-one"
+          fontSize={22}
+          className="text-ink-active"
+        />
       </button>
     </header>
   );
