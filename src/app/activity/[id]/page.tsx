@@ -55,7 +55,7 @@ export default function ActivityDetailPage({
                 {booking.referenceNumber}
               </h1>
               <p className="mt-[4px] text-[16px] font-semibold text-ink-secondary">
-                {booking.category}
+                {booking.category.split(" - ")[0]}
               </p>
             </div>
 

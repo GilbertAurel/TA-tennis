@@ -1,6 +1,6 @@
 "use client";
 
-import { Bell, SlidersHorizontal } from "lucide-react";
+import Link from "next/link";
 import { Iconify } from "./base/Icon";
 
 export function HomeHeader() {
@@ -8,9 +8,9 @@ export function HomeHeader() {
     <header className="sticky top-0 z-20 flex items-center justify-between bg-white px-5 pb-[24px] pt-4 drop-shadow">
       <h1 className="text-xl font-semibold text-[#525C68]">My Activity</h1>
       <div className="flex items-center gap-4">
-        <button
-          type="button"
-          aria-label="Filter"
+        <Link
+          key={"admin-page"}
+          href={"/admin"}
           className="text-accent transition-opacity active:opacity-60"
         >
           <Iconify
@@ -18,7 +18,7 @@ export function HomeHeader() {
             fontSize={28}
             className="text-ink-active"
           />
-        </button>
+        </Link>
         <button
           type="button"
           aria-label="Notifications"

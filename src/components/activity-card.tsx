@@ -38,7 +38,7 @@ export function ActivityCard({
         </div>
 
         <h2 className="mt-1.5 text-[14px] font-semibold text-ink">
-          {booking.facilityName}
+          {booking.category}
         </h2>
       </div>
 

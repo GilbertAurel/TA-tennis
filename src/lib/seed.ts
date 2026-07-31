@@ -3,8 +3,8 @@ import type { Booking } from "@/lib/types";
 export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
   {
     referenceNumber: "329394/07/26/FB",
-    category: "Facility Booking",
-    facilityName: "Facility Booking - other",
+    facilityName: "Tennis Court A",
+    category: "Facility Booking - other",
     eventName: "niko",
     description: "",
     location: "STD.35.N",
@@ -15,8 +15,8 @@ export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
   },
   {
     referenceNumber: "279780/12/25/HK",
-    category: "Housekeeping",
-    facilityName: "Housekeeping - Grease Trap",
+    facilityName: "Housekeeping",
+    category: "Housekeeping - Grease Trap",
     eventName: "Grease Trap Maintenance",
     description: "",
     location: "STD.35.N",
@@ -27,8 +27,8 @@ export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
   },
   {
     referenceNumber: "129522/03/24/ENG",
-    category: "Engineering",
-    facilityName: "Engineering - Closet",
+    facilityName: "Engineering",
+    category: "Engineering - Closet",
     eventName: "Closet Repair",
     description: "",
     location: "STD.35.N",
@@ -39,8 +39,8 @@ export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
   },
   {
     referenceNumber: "127385/03/24/ENG",
-    category: "Engineering",
-    facilityName: "Engineering - Ceiling",
+    facilityName: "Engineering",
+    category: "Engineering - Ceiling",
     eventName: "Ceiling Inspection",
     description: "Follow-up inspection of ceiling panel alignment.",
     location: "STD.35.N",
@@ -51,8 +51,8 @@ export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
   },
   {
     referenceNumber: "122162/02/24/ENG",
-    category: "Engineering",
-    facilityName: "Engineering - Ceiling",
+    facilityName: "Engineering",
+    category: "Engineering - Ceiling",
     eventName: "Ceiling Repair",
     description: "",
     location: "STD.35.N",
