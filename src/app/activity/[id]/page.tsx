@@ -47,7 +47,7 @@ export default function ActivityDetailPage({
           message="This activity may have been removed."
         />
       ) : (
-        <div className="bg-bg-gray flex-1">
+        <div className="bg-bg-gray flex-1 h-full">
           {/* Reference block */}
           <div className="w-full bg-white px-5 pb-[42px] flex justify-between">
             <div className="flex-col">
@@ -83,10 +83,12 @@ export default function ActivityDetailPage({
           </div>
 
           {activeTab === "Detail" ? (
-            <div className="flex flex-1 flex-col px-[12px] pt-3">
-              <AlertCard bookingId={bookingId} />
+            <div className="h-full flex flex-1 flex-col pt-3">
+              <div className="mx-[12px]">
+                <AlertCard bookingId={bookingId} />
+              </div>
 
-              <div className="mt-5 px-[16px] pt-[20px] pb-[32px] flex flex-col gap-5 bg-white rounded-2xl drop-shadow">
+              <div className="flex-1 mx-[12px] mt-5 px-[16px] pt-[20px] pb-[32px] flex flex-col gap-5 bg-white rounded-2xl drop-shadow">
                 <InfoRow
                   label="Facility Name"
                   value={booking.facilityName}
@@ -108,10 +110,6 @@ export default function ActivityDetailPage({
                 />
                 <InfoRow label="Description" value={booking.description} />
               </div>
-
-              <div className="mt-auto pb-6 pt-6">
-                <CancelRequestButton onConfirm={handleCancel} />
-              </div>
             </div>
           ) : (
             <div className="flex flex-1 flex-col px-5 pt-6">
@@ -119,6 +117,12 @@ export default function ActivityDetailPage({
                 title="No billing information"
                 message="Billing details will appear here once available."
               />
+            </div>
+          )}
+
+          {activeTab === "Detail" && (
+            <div className="absolute left-0 right-0 bottom-0 z-20 py-4 px-6 bg-white drop-shadow">
+              <CancelRequestButton onConfirm={handleCancel} />
             </div>
           )}
         </div>
