@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Facility Booking
+
+A production-ready Progressive Web App for facility booking management, built to faithfully recreate the reference mobile UI. Fully client-side — data persists in IndexedDB via Dexie, and the app works offline after installation.
+
+## Tech Stack
+
+- **Next.js** (App Router) + **React** + **TypeScript** (strict)
+- **TailwindCSS v4** + design tokens in `globals.css`
+- **Lucide React** icons
+- **React Hook Form** + **Zod** (admin form validation)
+- **TanStack Query** (data layer / cache invalidation)
+- **Framer Motion** (subtle fade / slide / press animations)
+- **Dexie** (IndexedDB)
+- **next-pwa** (service worker, offline caching)
+- **date-fns**, **Inter** font
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build (also generates the service worker)
+npm start          # serve the production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Application Flow
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route | Screen |
+|---|---|
+| `/` | My Activity — scrollable booking cards, bottom navigation |
+| `/activity/[id]` | Facility Booking Detail — Detail/Billing tabs, yellow "Click Here" alert, Cancel Request |
+| `/activity/[id]/additional-info` | Additional Info — centered-title header, blank content |
+| `/admin` | Create new bookings (saved to IndexedDB, list updates immediately, newest first) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Data Layer
 
-## Learn More
+`src/lib/db.ts` exposes `BookingDatabase` (Dexie) with `createBooking()`, `updateBooking()`, `deleteBooking()`, `getBooking()`, `getAllBookings()`, and `seedDatabase()`. On first launch the database is seeded with the bookings shown in the reference screenshots.
 
-To learn more about Next.js, take a look at the following resources:
+## PWA
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `public/manifest.json` + generated icons (`public/icons/`)
+- Service worker generated at build time by `next-pwa` (disabled in development)
+- Caches static assets, JS, CSS, fonts, icons and pages; the app continues to function offline after installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Design Reference
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`DESIGN.md` documents the full design analysis (layout, spacing, typography, colors, badges) measured from the screenshots in `~/Downloads` (`booking-1*.jpeg`).
