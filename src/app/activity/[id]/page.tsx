@@ -31,7 +31,12 @@ export default function ActivityDetailPage({
   const handleCancel = () => {
     if (!booking?.id) return;
     updateBooking.mutate(
-      { id: booking.id, changes: { status: "CANCELLED" } },
+      {
+        id: booking.id,
+        changes: {
+          status: booking.status === "CANCELLED" ? "NEW" : "CANCELLED",
+        },
+      },
       { onSuccess: () => router.push("/") },
     );
   };
@@ -122,7 +127,10 @@ export default function ActivityDetailPage({
 
           {activeTab === "Detail" && (
             <div className="absolute left-0 right-0 bottom-0 z-20 py-4 px-6 bg-white drop-shadow">
-              <CancelRequestButton onConfirm={handleCancel} />
+              <CancelRequestButton
+                isCancel={booking.status !== "CANCELLED"}
+                onConfirm={handleCancel}
+              />
             </div>
           )}
         </div>
