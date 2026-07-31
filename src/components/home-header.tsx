@@ -1,6 +1,7 @@
 "use client";
 
 import { Bell, SlidersHorizontal } from "lucide-react";
+import { Iconify } from "./base/Icon";
 
 export function HomeHeader() {
   return (
@@ -12,14 +13,22 @@ export function HomeHeader() {
           aria-label="Filter"
           className="text-accent transition-opacity active:opacity-60"
         >
-          <SlidersHorizontal className="h-[22px] w-[22px]" strokeWidth={2} />
+          <Iconify
+            icon="heroicons-solid:menu-alt-2"
+            fontSize={28}
+            className="text-ink-active"
+          />
         </button>
         <button
           type="button"
           aria-label="Notifications"
           className="text-accent transition-opacity active:opacity-60"
         >
-          <Bell className="h-[22px] w-[22px]" strokeWidth={2} />
+          <Iconify
+            icon="mdi-light:bell"
+            fontSize={26}
+            className="text-ink-active"
+          />
         </button>
       </div>
     </header>

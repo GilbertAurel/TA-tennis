@@ -6,6 +6,7 @@ import { MapPin, Calendar } from "lucide-react";
 import type { Booking } from "@/lib/types";
 import { StatusBadge } from "@/components/status-badge";
 import { formatCardDate } from "@/lib/format";
+import { Iconify } from "./base/Icon";
 
 export function ActivityCard({
   booking,
@@ -42,15 +43,19 @@ export function ActivityCard({
       </div>
 
       <div className="px-[18px] pt-[10px]">
-        <div className="mt-2 flex items-center gap-[12px]">
-          <MapPin className="h-3.5 w-3.5 text-[#8b8b8b]" strokeWidth={2} />
+        <div className="mt-2 flex items-center gap-[10px]">
+          <div className="size-[14px] flex items-center justify-center">
+            <Iconify icon="la:home" fontSize={14} className="text-ink" />
+          </div>
           <span className="text-[11px] font-medium text-ink-secondary">
             {booking.location}
           </span>
         </div>
 
-        <div className="mt-1.5 flex items-center gap-[12px]">
-          <Calendar className="h-3.5 w-3.5 text-[#8b8b8b]" strokeWidth={2} />
+        <div className="mt-1.5 flex items-center gap-[10px]">
+          <div className="size-[14px] flex items-center justify-center">
+            <Iconify icon="fontisto:date" fontSize={12} className="text-ink" />
+          </div>
           <span className="text-[11px] font-medium text-ink-secondary">
             {formatCardDate(booking.date)}&nbsp;&nbsp;{booking.startTime}
           </span>

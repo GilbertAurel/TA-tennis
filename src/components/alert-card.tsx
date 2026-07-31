@@ -19,7 +19,7 @@ export function AlertCard({ bookingId }: { bookingId: number }) {
         fontSize={28}
         className="text-alert-yellow-icon"
       />
-      <span className="flex-1 text-[15px] font-semibold text-ink-active">
+      <span className="flex-1 text-[13px] font-semibold text-ink-active">
         Click Here.
       </span>
     </motion.button>

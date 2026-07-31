@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, ClipboardList, Receipt, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Iconify } from "./base/Icon";
 
 const items = [
-  { href: "/home", label: "Home", icon: Home },
-  { href: "/", label: "My Activity", icon: ClipboardList },
-  { href: "/billing", label: "Billing", icon: Receipt },
-  { href: "/account", label: "Account", icon: User },
+  { href: "/home", label: "Home", icon: "ic:sharp-home" },
+  { href: "/", label: "My Activity", icon: "griddy-icons:file-list" },
+  { href: "/billing", label: "Billing", icon: "la:file-invoice-dollar" },
+  { href: "/account", label: "Account", icon: "mdi:user" },
 ];
 
 export function BottomNavigation() {
@@ -18,7 +18,7 @@ export function BottomNavigation() {
   return (
     <nav className="sticky bottom-0 z-20 mt-auto border-t border-[#eef0f3] bg-white pb-[env(safe-area-inset-bottom)] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
       <div className="grid grid-cols-4">
-        {items.map(({ href, label, icon: Icon }) => {
+        {items.map(({ href, label, icon }) => {
           const active =
             href === "/"
               ? pathname === "/" || pathname.startsWith("/activity")
@@ -32,7 +32,7 @@ export function BottomNavigation() {
                 active ? "text-accent-active" : "text-ink-secondary",
               )}
             >
-              <Icon className="h-[22px] w-[22px]" strokeWidth={2} />
+              <Iconify icon={icon} fontSize={26} />
               <span className="text-[10px] font-bold">{label}</span>
             </Link>
           );
