@@ -17,6 +17,7 @@ import {
 } from "@/hooks/use-bookings";
 import { formatTimeSlot } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { RescheduleButton } from "@/components/reschedule-button";
 
 const TABS = ["Detail", "Billing"] as const;
 
@@ -96,31 +97,36 @@ export default function ActivityDetailPage({
 
           {activeTab === "Detail" ? (
             <div className="h-full flex flex-1 flex-col pt-3">
-              <div className="mx-[12px]">
+              <div className="mx-3">
                 <AlertCard bookingId={bookingId} />
               </div>
 
-              <div className="flex-1 mx-[12px] mt-5 px-[16px] pt-[20px] pb-[32px] flex flex-col gap-5 bg-white rounded-2xl drop-shadow">
-                <InfoRow
-                  label="Facility Name"
-                  value={booking.facilityName}
-                  underline
-                />
-                <InfoRow
-                  label="Event Name"
-                  value={booking.eventName}
-                  underline
-                />
-                <InfoRow
-                  label="Time Slot"
-                  value={formatTimeSlot(
-                    booking.date,
-                    booking.startTime,
-                    booking.endTime,
-                  )}
-                  underline
-                />
-                <InfoRow label="Description" value={booking.description} />
+              <div className="flex-1 mx-3 mt-5 px-4 py-5 flex flex-col gap-10 bg-white rounded-2xl drop-shadow">
+                <div className="flex flex-col gap-5">
+                  <InfoRow
+                    label="Facility Name"
+                    value={booking.facilityName}
+                    underline
+                  />
+                  <InfoRow
+                    label="Event Name"
+                    value={booking.eventName}
+                    underline
+                  />
+                  <InfoRow
+                    label="Time Slot"
+                    value={formatTimeSlot(
+                      booking.date,
+                      booking.startTime,
+                      booking.endTime,
+                    )}
+                    underline
+                  />
+                  <InfoRow label="Description" value={booking.description} />
+                </div>
+                {booking.status === "IN PROGRESS" && (
+                  <RescheduleButton onClick={handleCancel} />
+                )}
               </div>
             </div>
           ) : (
