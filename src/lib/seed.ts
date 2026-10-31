@@ -2,6 +2,18 @@ import type { Booking } from "@/lib/types";
 
 export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
   {
+    referenceNumber: "352866/10/26/FB",
+    facilityName: "Tennis Court A",
+    category: "Facility Booking - other",
+    eventName: ".",
+    description: "",
+    location: "STD.35.N",
+    date: "2026-10-31",
+    startTime: "15:00",
+    endTime: "16:00",
+    status: "IN PROGRESS",
+  },
+  {
     referenceNumber: "349024/10/26/FB",
     facilityName: "Tennis Court B",
     category: "Facility Booking - other",
@@ -11,7 +23,7 @@ export const seedBookings: Array<Omit<Booking, "id" | "createdAt">> = [
     date: "2026-10-16",
     startTime: "06:00",
     endTime: "07:00",
-    status: "IN PROGRESS",
+    status: "RECEIVED",
   },
   {
     referenceNumber: "346331/10/26/FB",
